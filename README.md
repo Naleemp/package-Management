@@ -1,7 +1,6 @@
 # package-Management
 Author:Simon Peter Mendy
 ### **Email: simonpeter@nalempinfotech.com**
-
 ## Apache Maven Installation And Setup In AWS EC2 Redhat Instance.
 ##### Prerequisite
 AWS Acccount.
@@ -9,9 +8,7 @@ Create Security Group and open Required ports-22 ..etc
 Create Redhat EC2 T2.medium Instance with 4GB of RAM.
 Attach Security Group to EC2 Instance.
 Install java openJDK 1.8+
-
 ### Install Java JDK 1.8+  and other softares (GIT, wget and tree)
-
 ``` sh
 # install Java JDK 1.8+ as a pre-requisit for maven to run.
 
@@ -23,7 +20,6 @@ sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 java -version
 git --version
 ```
-
 ## 2. Download, extract and Install Maven
 ```
 #Step1) Download the Maven Software
