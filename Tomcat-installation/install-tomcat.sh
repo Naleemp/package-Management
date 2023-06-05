@@ -2,7 +2,7 @@
 # TOMCAT.SH
 # Steps for Installing tomcat9 on rhel7&8
 # install Java JDK 1.8+ as a pre-requisit for tomcat to run.
-# https://github.com/Naleemp/package-Management/edit/main/Tomcat-installation/install-tomcat.sh
+# https://github.com/Naleemp/package-Management/tree/main/Tomcat-installation/install-tomcat.sh
 
 # install Java JDK 1.8+ as a pre-requisit for tomcat to run.
 sudo hostnamectl set-hostname tomcat
