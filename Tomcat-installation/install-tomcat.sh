@@ -2,7 +2,7 @@
 # TOMCAT.SH
 # Steps for Installing tomcat9 on rhel7&8
 # install Java JDK 1.8+ as a pre-requisit for tomcat to run.
-# https://github.com/LandmakTechnology/package-management/tree/main/Tomcat-installation
+# https://github.com/Naleemp/package-Management/edit/main/Tomcat-installation/install-tomcat.sh
 
 # install Java JDK 1.8+ as a pre-requisit for tomcat to run.
 sudo hostnamectl set-hostname tomcat
@@ -37,7 +37,7 @@ vim /opt/tomcat9/conf/server.xml
 vi /opt/tomcat9/webapps/manager/META-INF/context.xml
 vi /opt/tomcat9/conf/tomcat-user.xml  # to add user
 
-	<user username="landmark" password="admin" roles="manager-gui,admin-gui"/>
+	<user username="simon" password="admin123" roles="manager-gui,admin-gui"/>
 	
 
 /opt/tomcat9/conf/context.xml
