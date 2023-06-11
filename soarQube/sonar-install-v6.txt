@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Simon
+# Author: Simon Peter
 # CentOs or REHEL 7/8
 
 #As a good security practice, SonarQuber Server is not advised to run sonar service as a root user, 
