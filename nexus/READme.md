@@ -1,5 +1,4 @@
 #  **<span style="color:green">NaleempInfoTech.</span>**
-### **<span style="color:green">Contacts: <br> WebSite : </span>**
 ### **Email: mendysimonpeter@gmail.com**
 
 
