@@ -1,6 +1,5 @@
 #!/bin/bash
-# Author: Prof Legah
-# date: sep/12/2022
+# Author: Simon Peter Mendy
 # Installing Jenkins on RHEL 7/8, CentOS 7/8 or Amazon Linux OS
 # You can execute this script as user-data when launching your EC2 VM.
 sudo timedatectl set-timezone America/New_York
