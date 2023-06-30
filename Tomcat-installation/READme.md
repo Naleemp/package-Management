@@ -1,5 +1,5 @@
 #  **<span style="color:green">NaleempInfoTech</span>**
-### **Email:simonpeter@nalempinfotech.com **
+### **Email:simonpeter@nalempinfotech.com,mendysimonpeter@gmail.com **
 
 
 
