@@ -1,5 +1,5 @@
 ### **Author:Simon Peter Mendy **
-### **Email:simonpeter@nalempinfotech.com **
+### **Email:simonpeter@nalempinfotech.com,mendysimonpeter@gmail.com **
 
 Nginx - HTTP Server
 Install Nginx in Redhat
