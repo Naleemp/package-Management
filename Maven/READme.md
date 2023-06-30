@@ -1,6 +1,6 @@
 # package-Management
 Author:Simon Peter Mendy
-### **Email: simonpeter@nalempinfotech.com**
+### **Email: simonpeter@nalempinfotech.com,mendysimonpeter@gmail.com**
 ## Apache Maven Installation And Setup In AWS EC2 Redhat Instance.
 ##### Prerequisite
 AWS Acccount.
