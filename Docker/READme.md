@@ -1,4 +1,5 @@
-
+### **Author:Simon Peter Mendy **
+### **Email:simonpeter@nalempinfotech.com,mendysimonpeter@gmail.com**
 #!/bin/bash
 sudo apt update -y
 sudo apt install docker.io -y
