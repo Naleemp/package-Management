@@ -24,6 +24,7 @@ Add user to docker group.
 sudo usermod -aG docker $USER 
      or 
 sudo usermod -aG docker ubuntu
+
 sudo su - ubuntu  
 
 # Exit From Current SSH Terminal & SSH(Login) again . Then execute 
@@ -32,8 +33,12 @@ docker ps
 # Amazon Linux
 ###########################
 sudo yum update -y    
+
 sudo yum install docker -y
+
 sudo service docker start
 
 Add Regular user to docker group
+
 sudo usermod -aG docker  <username>
+
