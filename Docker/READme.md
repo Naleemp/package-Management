@@ -1,6 +1,6 @@
 ### **Author:Simon Peter Mendy **
 ### **Email:simonpeter@nalempinfotech.com,mendysimonpeter@gmail.com**
-**Install Docker on  Ubuntu**
+###**Install Docker on  Ubuntu**
 sudo apt update -y
 sudo apt install docker.io -y
 sudo service docker start
