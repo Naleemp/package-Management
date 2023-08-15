@@ -1,5 +1,25 @@
-sudo hostname master
-docker node ls
-docker init
-docker swarm join --token <Use the token given in line 3 to add node>
-docker swarm join-token manager
+Note: Make Sure You Open Required/All Ports in AWS Security Groups. 8:2
+
+======================================================================
+# Initialize docker swarm cluster by exeuting below command on docker server which you want make it as Manager
+
+# Initialize docker swarm on privateIP
+docker swarm init
+
+# Initialyze Docker swarm with Public IP
+Note: Don't use below(If restart your systems public ip will change will break your cluster) use above commond to initilaze cluster.
+
+# Intilaize docker swarm cluster on public IP
+docker swarm init  --listen-addr=eth0 --advertise-addr $(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+
+
+# Get worker token
+#scritp to install the master node
+
+#!/bin/bash
+sudo apt update -y 
+sudo apt install docker.io -y
+sudo usermod -aG docker ubuntu
+docker swarm join --token <Use the token given in line 7>
+sudo hostname node
+
