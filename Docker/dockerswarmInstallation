@@ -1,0 +1,5 @@
+sudo hostname master
+docker node ls
+docker init
+docker swarm join --token <Use the token given in line 3 to add node>
+docker swarm join-token manager
