@@ -20,6 +20,6 @@ docker swarm init  --listen-addr=eth0 --advertise-addr $(curl http://169.254.169
 sudo apt update -y 
 sudo apt install docker.io -y
 sudo usermod -aG docker ubuntu
-docker swarm join --token <Use the token given in line 7>
+sudo docker swarm join --token <Use the token given in line 7>
 sudo hostname node
 
