@@ -4,6 +4,7 @@ Note: Make Sure You Open Required/All Ports in AWS Security Groups. 8:2
 # Initialize docker swarm cluster by exeuting below command on docker server which you want make it as Manager
 
 # Initialize docker swarm on privateIP
+sudo apt install swarm
 docker swarm init
 
 # Initialyze Docker swarm with Public IP
