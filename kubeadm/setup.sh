@@ -1,6 +1,6 @@
 
 =============================================================================================================================
-Landmark Technologies 
+NaleempInfoTech Solutions 
 ==============================================================================================================================
 
 Agenda: Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers Container-D As Runtime
