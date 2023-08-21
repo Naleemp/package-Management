@@ -48,7 +48,7 @@ sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 sudo apt-get install -y kubelet containerd kubeadm kubectl kubernetes-cni 
 
-# apt-mark hold will prvent the package from being authomatically upgraded or removed
+# apt-mark hold will prevent the package from being authomatically upgraded or removed
 
 sudo apt-mark hold kubelet containerd kubeadm kubectl kubernetes-cni 
 
