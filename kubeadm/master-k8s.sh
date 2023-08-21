@@ -98,6 +98,5 @@ systemctl enable kubelet.service
 
 # initialise the control plane
 kubeadm init 
-
 su - ubuntu
 ~
