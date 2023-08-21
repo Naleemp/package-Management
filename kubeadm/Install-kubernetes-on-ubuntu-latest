@@ -1,0 +1,203 @@
+
+==============================================================================================================================
+NaleempInfoTech Solutions/Guatemala, Ph: + 50259138234
+==============================================================================================================================
+
+Agenda: Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers
+=======
+
+
+Prerequisite:
+=============
+
+3 - Ubuntu Servers -- 18.04
+1 - Manager (4GB RAM , 2 Core)  t2.medium
+2 - Workers  (1 GB, 1 Core)     t2.micro
+
+
+Note: Open Required Ports In AWS Security Groups. 
+      For now we will open All trafic.
+
+==========COMMON FOR MASTER & WORKER NODES START ====
+
+# First, login as ‘root’ user because the following set of commands need to be executed with ‘sudo’ permissions.
+
+sudo hostname k8s
+sudo su -  OR sudo -i
+
+=# Install Required packages and apt keys.
+
+sudo apt-get update -y
+sudo apt-get install -y apt-transport-https
+
+sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+
+apt-get update -y
+
+#Turn Off Swap Space
+
+swapoff -a
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+
+#Install kubeadm, Kubelet And Kubectl containerd
+
+sudo apt-get install -y kubelet containerd kubeadm kubectl kubernetes-cni 
+
+# apt-mark hold will prvent the package from being authomatically upgraded or removed
+
+sudo apt-mark hold kubelet containerd kubeadm kubectl kubernetes-cni 
+
+
+# helm install javaapp
+
+cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+
+# Setup required sysctl params, these persist across reboots.
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+# Apply sysctl params without reboot
+sudo sysctl --system
+
+# Configure containerd:
+
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+
+# Restart containerd:
+sudo systemctl restart containerd
+
+# If you get error releated to kubernetes-cni if alreay exists install with out kubernetes-cni
+apt-get install -y kubelet kubeadm kubectl 
+
+# Enable and start kubelet service
+
+sudo systemctl daemon-reload 
+sudo systemctl start kubelet 
+sudo systemctl enable kubelet.service
+
+sudo kubeadm join 172.31.30.188:6443 --token pzxjka.sylger2rnt0i5bpo \
+        --discovery-token-ca-cert-hash sha256:51f95904b1324fa1328164660419cfb8a644d5bd0ecf18ec283370970d171b27
+
+==========COMMON FOR MASTER & SLAVES END=====
+
+
+
+===========In Master Node Start====================
+# Steps Only For Kubernetes Master
+
+# Switch to the root user.
+
+sudo su -
+
+# Initialize Kubernates master by executing below commond.
+
+sudo kubeadm init
+
+#exit as root user & exeucte as normal ubuntu user
+
+sudo su - ubuntu
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+# To verify, if kubectl is working or not, run the following command.
+
+kubectl get pods -o wide -n kube-system
+
+#You will notice from the previous command, that all the pods are running except one: ‘core-dns’. For resolving this we will install a # pod network. To install the weave pod network, run the following command:
+
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+kubectl get nodes
+
+kubectl get pods 
+kubectl get pods --all-namespaces
+
+
+# Get token
+
+
+
+=========In Master Node End====================
+
+
+Add Worker Machines to Kubernates Master
+=========================================
+
+Copy kubeadm join token from and execute in Worker Nodes to join to cluster
+
+kubeadm join 172.31.10.12:6443 --token cdm6fo.dhbrxyleqe5suy6e \
+        --discovery-token-ca-cert-hash sha256:1fc51686afd16c46102c018acb71ef9537c1226e331840e7d401630b96298e7d
+
+
+kubectl commonds has to be executed in master machine.
+
+Check Nodes 
+=============
+
+kubectl get nodes
+
+
+Deploy Sample Application
+==========================
+
+kubectl run nginx-demo --image=nginx --port=80 
+
+kubectl expose deployment nginx-demo --port=80 --type=NodePort
+
+
+Get Node Port details 
+=====================
+kubectl get services
+ 
+ alias k=kubectl
+ k api-resources
+
+# Label node 
+kubectl label node <nodeName>   node-role.kubernetes.io/worker=worker
+
+ alias k=kubectl
+
+
+ *Another Landmark Class23 yet to Graduate Engineer Lands DevOps job today June 15, 2021 making up to $160,000/yr in Ontario, Canada*.
+
+       He got the job from his First Technical interview.
+                  WITH   NO PR, NO GC, 
+             NOT A CANADIAN/US CITIZEN
+      Interview comment: "You were not only good but you nailed it"
+      Completely new in IT.
+
+  Congratulations Landmark Engineers 
+        Congratulations Class23
+
+YES: Jesus is in our midst
+I remain humbled and grateful to the Lord Jesus who keeps on doing wonders in Landmark Technologies.
+ 
+Landmark Technologies
+
+
+ How do you understand about CI/CD and how have you implemented it? 
+
+ How you const
+
+ 
+ Hello Engineers,
+ 
+ We shall not be hav
+ Follow the video on
+ Follow the video 
+ kubernetes 10 - ingress
