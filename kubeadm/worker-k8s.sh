@@ -96,4 +96,4 @@ sudo apt-mark hold kubelet kubeadm kubectl
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
-#Add the command bellow for the token generated in configuring master node
+#Add the command bellow for the token generated from configuring master node
