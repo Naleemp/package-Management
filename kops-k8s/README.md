@@ -64,7 +64,7 @@ You Created. --> Save.
 
 ## 6) create an S3 bucket
 ## Execute the commands below in your KOPS control Server. use unique s3 bucket name. If you get bucket name exists error.
-	aws s3 mb s3://class30kops
+	aws s3 mb s3://class1kops
 	aws s3 ls # to verify
 	
  ## 6b) create an S3 bucket    
@@ -73,8 +73,8 @@ You Created. --> Save.
     
        vi .bashrc
 	# Give Unique Name And S3 Bucket which you created.
-	export NAME=class30.k8s.local
-	export KOPS_STATE_STORE=s3://class30kops
+	export NAME=class1.k8s.local
+	export KOPS_STATE_STORE=s3://class1kops
  
       source .bashrc  
 	
