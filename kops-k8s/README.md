@@ -90,7 +90,7 @@ kops create cluster --zones us-east-1a --networking weave --master-size t2.mediu
 # copy the sshkey into your cluster to be able to access your kubernetes node from the kops server
 kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
 ```
-# 9) Initialise your kops kubernetes cluser by running the command below
+# 9) Initialise your kops kubernetes cluser by running the command below, in other words create the cluster in aws
 ```sh
 kops update cluster ${NAME} --yes
 ```
