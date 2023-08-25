@@ -1,8 +1,6 @@
 <<kops
-Landmark Technologies 
-Tel: +1 437 215 2483 
-mylandmarktech@gailcom 
-www.mylandmarktech.com 
+NaleempInfoTech
+mendysimonpeter@gmail.com
 kops
 Setup Kubernetes (K8s) Cluster on AWS Using KOPS
 
@@ -105,7 +103,7 @@ To Delete Cluster
 IF you wan to SSH to Kubernates Master or Nodes Created by KOPS. You can SSH From KOPS_Server
 
 ssh  admin@<IPOrDNS>
-it above command  is not working
+if above command  is not working
 then execute
 ssh -i ~/.ssh/id_rsa admin@<IPOrDNS>
   
