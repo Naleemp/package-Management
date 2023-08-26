@@ -29,7 +29,7 @@
  ```
  ##  2a) install AWSCLI using the apt package manager
   ```sh
- sudo apt udpate
+ sudo apt update
  sudo apt  install awscli -y 
  ```
  ## or 2b) install AWSCLI using the script below
